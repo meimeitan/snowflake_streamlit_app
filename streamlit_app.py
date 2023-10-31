@@ -32,7 +32,7 @@ streamlit.write('The user entered', fruit_choice)
 
 ##new section to display fruityvice api response
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/fruit_choice")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/Orange")
 
 
 ##normalise the json version of response
