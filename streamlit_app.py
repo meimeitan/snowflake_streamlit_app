@@ -28,7 +28,7 @@ streamlit.header('Fruityvice Fruit Advice!')
 
 #add text entry box and ssend the input to fruityvice as part of API call
 fruit_choice = streamlit.text_input('WHat fruit would you like information about?', 'Kiwi')
-streamlit.write('The user entered', fruit_choice2)
+streamlit.write('The user entered', fruit_choice)
 
 ##new section to display fruityvice api response
 import requests
@@ -51,7 +51,7 @@ streamlit.dataframe(my_data_rows)
 
 #add text entry box and send the input to snowflake connector as part of API call
 fruit_choice2 = streamlit.text_input('What fruit would you like add?', 'jackfruit')
-streamlit.write('Thanks for adding ', fruit_choice)
+streamlit.write('Thanks for adding ', fruit_choice2)
 
 
 
