@@ -34,8 +34,6 @@ streamlit.write('The user entered', fruit_choice)
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 
-## to filter the table data
-fruits_to_show2 = fruityvice_response.loc[fruit_choice]
 
 ##normalise the json version of response
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
