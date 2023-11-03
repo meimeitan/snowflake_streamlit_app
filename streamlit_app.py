@@ -26,7 +26,12 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 ##display the table on the page
 streamlit.dataframe(fruits_to_show)
 
-
+#create the repeatable code block (called a function)
+def get_fruityvice_data(this_fruit_choice):
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    return streamlit.dataframe(fruityvice_normalized)
+    
 ##new section to display fruityvice api response with header
 streamlit.header('Fruityvice Fruit Advice!')
 try:
@@ -36,14 +41,17 @@ try:
   if not fruit_choice:
     streamlit.error("Please select a fruit to get information.")
   else:
+    back_from_function = get_fruityvice_data(fruit_choice)
+    streamlit.dataframe(back_from_function)
+    
 ##new section to display fruityvice api response
 #import requests
-    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
     
 ##normalise the json version of response
-    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    #fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 ##output shows in table
-    streamlit.dataframe(fruityvice_normalized)
+    #streamlit.dataframe(fruityvice_normalized)
 
 except URLError as e:
     streamlit.error()
