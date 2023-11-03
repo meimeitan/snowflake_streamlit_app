@@ -36,13 +36,13 @@ def get_fruityvice_data(this_fruit_choice):
 streamlit.header('Fruityvice Fruit Advice!')
 try:
 #add text entry box and ssend the input to fruityvice as part of API call
-  fruit_choice = streamlit.text_input('What fruit would you like information about?')
+    fruit_choice = streamlit.text_input('What fruit would you like information about?')
 #streamlit.write('The user entered', fruit_choice)
-  if not fruit_choice:
-    streamlit.error("Please select a fruit to get information.")
-  else:
-    back_from_function = get_fruityvice_data(fruit_choice)
-    streamlit.dataframe(back_from_function)
+    if not fruit_choice:
+        streamlit.error("Please select a fruit to get information.")
+    else:
+        back_from_function = get_fruityvice_data(fruit_choice)
+        streamlit.dataframe(back_from_function)
     
 ##new section to display fruityvice api response
 #import requests
@@ -53,11 +53,11 @@ try:
 ##output shows in table
     #streamlit.dataframe(fruityvice_normalized)
 
-#except URLError as e:
-    #streamlit.error()
+except URLError as e:
+    streamlit.error()
   
 #don't run anything past here while we troubleshoot
-#streamlit.stop()
+streamlit.stop()
 
 #snowflake connector
 #import snowflake.connector
