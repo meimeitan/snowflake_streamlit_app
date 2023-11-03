@@ -57,7 +57,7 @@ try:
     #streamlit.error()
   
 #don't run anything past here while we troubleshoot
-streamlit.stop()
+#streamlit.stop()
 
 #snowflake connector
 #import snowflake.connector
