@@ -52,7 +52,7 @@ except URLError as e:
 
 #snowflake connector
 #import snowflake.connector
-streamlit.header("The fruit load list contains:")
+streamlit.header("View Our Fruit List - Add Your Favourites!")
 #snowflake-related functions:
 def get_fruit_load_list():
     with my_cnx.cursor() as my_cur:
@@ -63,6 +63,7 @@ def get_fruit_load_list():
 if streamlit.button('Get Fruit Load List'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
+    my_cnx.close()
     streamlit.dataframe(my_data_rows)
 
 #add text entry box and send the input to snowflake connector as part of API call
