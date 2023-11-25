@@ -1,4 +1,4 @@
-# snowflake_rivery_streamlit_webapp
+# Snowflake_rivery_streamlit_webapp
 
 Using Streamlit, Rivery and Github to build an online web app for user interaction. Information input will be store in Snowflake
 
